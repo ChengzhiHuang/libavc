@@ -17,8 +17,8 @@ LINK_DIRECTORIES (
 
 ADD_DEFINITIONS (${CMAKE_C_FLAGS})
 
-ADD_EXECUTABLE (avctest ${avctest_src_files})
+ADD_EXECUTABLE (avcdecode ${avctest_src_files})
 
-TARGET_LINK_LIBRARIES (avctest avcdec pthread)
+TARGET_LINK_LIBRARIES (avcdecode avcdec pthread)
 
 SET (EXECUTABLE_OUTPUT_PATH ${libavcdec_top_srcdir})
