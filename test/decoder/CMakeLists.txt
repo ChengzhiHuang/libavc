@@ -1,14 +1,14 @@
 SET (CMAKE_C_FLAGS " -DPROFILE_ENABLE -DARM -fPIC -DMD5_DISABLE ")
 
-SET (libavcdec_top_srcdir ../..)
+SET (libavc_top_srcdir ../..)
 
-SET (avctest_src_files
+SET (avc_dectest_src_files
 	main.c
 )
 
 INCLUDE_DIRECTORIES(
-	${libavcdec_top_srcdir}/decoder
-	${libavcdec_top_srcdir}/common
+	${libavc_top_srcdir}/decoder
+	${libavc_top_srcdir}/common
 )
 
 LINK_DIRECTORIES (
@@ -17,8 +17,8 @@ LINK_DIRECTORIES (
 
 ADD_DEFINITIONS (${CMAKE_C_FLAGS})
 
-ADD_EXECUTABLE (avcdecode ${avctest_src_files})
+ADD_EXECUTABLE (avcdecode ${avc_dectest_src_files})
 
 TARGET_LINK_LIBRARIES (avcdecode avcdec pthread)
 
-SET (EXECUTABLE_OUTPUT_PATH ${libavcdec_top_srcdir})
+SET (EXECUTABLE_OUTPUT_PATH ${libavc_top_srcdir}/bin)
